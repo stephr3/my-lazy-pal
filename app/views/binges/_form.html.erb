@@ -1,7 +1,7 @@
 <%= form_for [@user, @binge] do |f| %>
  <%= f.label :show %>
  <%= f.text_field :show %>
- <%= link_to 'Add a New Show', new_show_path, remote: true %>
+ <%= link_to 'Add a New Show', new_show_path, id: "new_show_link", remote: true %>
  <%= f.label :start %>
  <%= f.datetime_field :start%>
  <%= f.label :finish %>
