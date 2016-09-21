@@ -1,10 +1,10 @@
 <%= form_for [@user, @binge] do |f| %>
  <%= f.label :show %>
- <%= f.text_field :show %>
+ <%= text_field_tag :show, params[:show], class: "show-search" %>
  <%= link_to 'Add a New Show', new_show_path, id: "new_show_link", remote: true %>
  <%= f.label :start %>
- <%= f.datetime_field :start%>
+ <%= f.datetime_select :start%>
  <%= f.label :finish %>
- <%= f.datetime_field :finish %>
+ <%= f.datetime_select :finish %>
  <%= f.submit "Log Binge Session" %>
 <%end%>

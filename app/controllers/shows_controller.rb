@@ -16,6 +16,18 @@ class ShowsController < ApplicationController
       render :new
     end
   end
+
+  def autocomplete
+    @show_search = Show.order(:name).where("name ILIKE ?", "%#{ params[:term] }%")
+    respond_to do |format|
+      format.html
+      format.json {
+        render json: @show_search.map(&:name).to_json
+      }
+    end
+  end
+
+
 private
   def show_params
     params.require(:show).permit(:name, :description, :media_type, :category)

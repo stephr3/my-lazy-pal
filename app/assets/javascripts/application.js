@@ -14,3 +14,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require jquery-ui
+//= require jquery-ui/autocomplete
+//= require jquery-ui/effect-pulsate
+
+$(function(){
+	  $(".show-search").autocomplete({
+	    source: '/shows/autocomplete.json',
+	  });
+	})
