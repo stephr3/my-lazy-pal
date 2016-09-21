@@ -1,0 +1,40 @@
+head {
+  background-color: #ffa949;
+}
+
+.title {
+  font-family: 'Courgette', cursive;
+  color: #0d0d0d;
+  font-size: 90px;
+  text-align: center;
+}
+
+header {
+  font-family: 'Andada', serif;
+  padding-top: 50px;
+  height: 650px;
+
+  background: linear-gradient(#F3FFBD, transparent 90%),
+              linear-gradient(0deg, #fff, transparent),
+              #ffa949 url('https://gradeslam.org/blog_images/149/cover.jpg') no-repeat center;
+// https://d.fastcompany.net/multisite_files/fastcompany/imagecache/1280/poster/2013/04/3008263-poster-1920-busy-new-lazy.jpg
+//
+  background-size: cover;
+  text-shadow: 0 1px 1px rgba(0,0,0,.8);
+}
+
+body {
+  color: #878787;
+  margin: 0;
+  font-family: 'Andada', serif;
+}
+
+.main-footer {
+  text-align: center;
+  margin: 5% auto;
+}
+
+.wrapper {
+  padding-left: 2em;
+  padding-right: 2em;
+}
