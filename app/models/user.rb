@@ -1,5 +1,8 @@
 
 class User < ActiveRecord::Base
+  has_many :binges
+  has_many :shows, through: :binges
+
   attr_accessor :password
   validates :username, :password, presence: true, on: :create
   validates :password, length: { minimum: 4 }, on: :create

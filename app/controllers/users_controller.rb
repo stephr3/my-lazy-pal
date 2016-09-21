@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     if @user.save
      flash[:notice] = "Welcome to the site!"
      session[:user_id] = @user.id
-     redirect_to "/"
+     redirect_to user_path(@user)
     else
      flash[:alert] = "There was a problem creating your account. Please try again."
      redirect_to :back
