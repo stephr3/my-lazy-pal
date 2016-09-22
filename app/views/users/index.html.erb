@@ -1,4 +1,4 @@
 <h1>Start Here!</h1>
 <% if current_user %>
-<button><%= link_to 'Log a Binge!', user_path(current_user) %></button>
+<a href="users/<%= current_user.id %>"><button>Log a Binge!</button></a>
 <% end %>

@@ -1,4 +1,4 @@
-<%= form_for [@user, @binge] do |f| %>
+<%= form_for [@user, @binge], remote: true do |f| %>
  <%= f.label :show %>
  <%= text_field_tag :show, params[:show], class: "show-search" %>
  <button><%= link_to 'Add a New Show', new_show_path, id: "new_show_link", class: "btn", remote: true %></button><br>
