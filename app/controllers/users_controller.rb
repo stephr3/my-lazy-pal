@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @binge = @user.binges.new
+    @binges = total_binge_hours(@user.binges)
   end
 
   def create
@@ -24,6 +25,15 @@ class UsersController < ApplicationController
      redirect_to :back
     end
   end
+
+  def total_binge_hours(binges)
+    total_hours = 0
+    binges.each do |binge|
+      total_hours += ((((binge.finish).to_i  - (binge.start).to_i))/3600)
+    end
+    return total_hours
+  end
+
 private
    def user_params
      params.require(:user).permit(:username, :password)
