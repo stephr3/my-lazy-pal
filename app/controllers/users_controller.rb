@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  helper_method :sort_column, :sort_direction
 
   def index
     @users = User.all
@@ -10,6 +11,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @shows = @user.shows.order(sort_column + " " + sort_direction)
     @binge = @user.binges.new
     @binges = total_binge_hours(@user.binges)
   end
@@ -34,8 +36,18 @@ class UsersController < ApplicationController
     return total_hours
   end
 
+  helper_method :total_binge_hours
+
 private
-   def user_params
-     params.require(:user).permit(:username, :password)
-   end
+  def sort_column
+    Show.column_names.include?(params[:sort]) ? params[:sort] : "name"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
+
+  def user_params
+   params.require(:user).permit(:username, :password)
+  end
 end

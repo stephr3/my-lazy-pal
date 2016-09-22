@@ -13,7 +13,8 @@ class ShowsController < ApplicationController
         format.js
       end
     else
-      render :new
+      flash[:alert] = "Sorry, your show has not been added."
+      redirect_to :back
     end
   end
 

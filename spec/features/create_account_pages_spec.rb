@@ -10,4 +10,11 @@ describe "user account creation path" do
     click_button "Create Account"
     expect(page).to have_content "Welcome"
   end
+
+  it "will display an error if account has not been created" do
+    visit root_path
+    click_link "Create Account"
+    click_button "Create Account"
+    expect(page).to have_content "problem"
+  end
 end

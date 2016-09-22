@@ -3,3 +3,37 @@
 <h3>Log a Binge Watching Session</h3>
 <h4>Total binge time: <span id="binge_time"><%= @binges %></span> hours </h4>
 <%= render 'binges/form' %>
+
+<br>
+<table>
+  <tr>
+    <th>
+      <%= sortable 'name', "Name" %>
+    </th>
+    <th>
+      <%= sortable 'media_type', 'Type' %>
+    </th>
+    <th>
+      <%= sortable 'category', 'Category' %>
+    </th>
+    <th>
+      <%= link_to "Hours binged", :sort => @binges %>
+    </th>
+  </tr>
+  <% for show in @shows %>
+    <tr>
+      <td>
+        <%= show.name %>
+      </td>
+      <td>
+        <%= show.media_type %>
+      </td>
+      <td>
+        <%= show.category %>
+      </td>
+      <td>
+        <%= total_binge_hours(show.binges) %>
+      </td>
+    </tr>
+  <% end %>
+</table>

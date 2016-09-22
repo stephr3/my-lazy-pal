@@ -4,11 +4,11 @@
  <%= f.text_field :name %>
  <%= f.label :description %>
  <%= f.text_field :description, autocomplete: "off" %>
- <%= f.label :TV, 'TV' %>
+ <%= f.label :media_type_tv, 'TV' %>
  <%= f.radio_button :media_type, 'TV'%>
- <%= f.label :Movie, 'Movie' %>
+ <%= f.label :media_type_movie, 'Movie' %>
  <%= f.radio_button :media_type, 'Movie'%>
  <%= f.label :category %>
- <%= f.select :category, options_for_select(['', 'Sci Fi', 'Drama', 'Comedy', 'Action', 'Documentary', 'Romance', 'Misc']), {}, {class: "form-control"} %>
+ <%= f.select :category, options_for_select(['', 'Sci Fi', 'Drama', 'Comedy', 'Action', 'Documentary', 'Romance', 'Misc']), {}, {class: "form-control", id: "category-select"} %>
  <%= f.submit "Add Show" %>
 <%end%>
