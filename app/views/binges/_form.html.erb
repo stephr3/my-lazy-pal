@@ -1,7 +1,7 @@
 <%= form_for [@user, @binge] do |f| %>
  <%= f.label :show %>
  <%= text_field_tag :show, params[:show], class: "show-search" %>
- <%= link_to 'Add a New Show', new_show_path, id: "new_show_link", remote: true %>
+ <button><%= link_to 'Add a New Show', new_show_path, id: "new_show_link", class: "btn", remote: true %></button><br>
  <%= f.label :start %>
  <%= f.datetime_field :start%>
  <%= f.label :finish %>

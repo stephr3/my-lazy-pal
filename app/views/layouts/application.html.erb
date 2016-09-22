@@ -8,21 +8,23 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <header class="title">
-    MyLazyPal
+    <%= link_to 'MyLazyPal', root_path %>
   </header>
 
   <body>
     <div class="wrapper">
       <%= flash[:alert] %>
       <%= flash[:notice] %>
-      <%= link_to 'Home', root_path %>
-      <% if current_user %>
-      <p>Welcome, lazy <strong><%= current_user.username %>!</strong></p>
-      <%= link_to 'Log out', log_out_path %>
-      <% else %>
-      <%= link_to 'Create Account', new_user_path %>
-      <%= link_to 'User Login', log_in_path %>
-      <% end %>
+      <nav>
+        <li><%= link_to 'Home', root_path %></li>
+        <% if current_user %>
+        <li class="inline-block">Welcome, lazy <strong><%= current_user.username %>!</strong></li>
+        <li><%= link_to 'Log out', log_out_path %></li>
+        <% else %>
+        <li><%= link_to 'Create Account', new_user_path %></li>
+        <li><%= link_to 'User Login', log_in_path %></li>
+        <% end %>
+      </nav>
       <div class="container">
         <%= yield %>
       </div>

@@ -25,6 +25,10 @@ header {
 //
   background-size: cover;
   text-shadow: 0 1px 1px rgba(0,0,0,.8);
+  a {
+    text-decoration: none;
+    color: black;
+  }
 }
 
 body {
@@ -41,4 +45,34 @@ body {
 .wrapper {
   padding-left: 2em;
   padding-right: 2em;
+}
+
+input, button {
+  width: 100%;
+  padding: 8px 12px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+
+}
+
+button a {
+  text-decoration: none;
+  color: black;
+}
+
+nav {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+nav li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav li a {
+  text-decoration: none;
+  color: #878787;
 }
