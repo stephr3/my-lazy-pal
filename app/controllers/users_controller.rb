@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @shows = @user.shows.order(sort_column + " " + sort_direction)
+    @shows = @user.shows.order(sort_column + " " + sort_direction).distinct
     @binge = @user.binges.new
     @binges = total_binge_hours(@user.binges)
   end

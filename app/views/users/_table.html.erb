@@ -1,0 +1,32 @@
+<table id="shows">
+  <tr>
+    <th class="show-table">
+      <%= sortable 'name', "Name" %>
+    </th>
+    <th class="show-table">
+      <%= sortable 'media_type', 'Type' %>
+    </th>
+    <th>
+      <%= sortable 'category', 'Category' %>
+    </th>
+    <th class="show-table">
+      <%= link_to "Hours binged", :sort => @binges %>
+    </th>
+  </tr>
+  <% for show in @shows %>
+    <tr>
+      <td class="show-table-name show-table">
+        <%= show.name %>
+      </td>
+      <td class="show-table">
+        <%= show.media_type %>
+      </td>
+      <td class="show-table">
+        <%= show.category %>
+      </td>
+      <td class="show-table">
+        <%= total_binge_hours(show.binges) %>
+      </td>
+    </tr>
+  <% end %>
+</table>

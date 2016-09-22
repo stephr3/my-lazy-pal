@@ -19,7 +19,11 @@
 //= require jquery-ui/effect-pulsate
 
 $(function(){
-	  $(".show-search").autocomplete({
-	    source: '/shows/autocomplete.json',
-	  });
+  $(".show-search").autocomplete({
+    source: '/shows/autocomplete.json',
+  });
+	$('#shows th a').on('click', function(){
+		$.getScript(this.href);
+		return false;
 	})
+})
