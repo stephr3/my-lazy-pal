@@ -18,12 +18,12 @@
 //= require jquery-ui/autocomplete
 //= require jquery-ui/effect-pulsate
 
-$(function(){
+$(document).ready(function(event){
   $(".show-search").autocomplete({
     source: '/shows/autocomplete.json',
   });
-	$('#shows th a').on('click', function(){
+	$('#shows-display th a').on('click', function(){
 		$.getScript(this.href);
 		return false;
-	})
-})
+	});
+});
