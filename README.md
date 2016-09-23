@@ -47,6 +47,12 @@ $ rails server
 
 Navigate to `localhost:3000` in your browser of choice.
 
+Future Features
+------------
+* Change total binge hours to a property of the Show model. Creating a binge will also update the show's binge hours properties.
+* Add graphs to chart binge watching with Chartkick.
+* Procrastination tracker: add a goal, and track how long you've procrastinated on it.
+
 License
 -------
 _This software is licensed under the MIT license._<br>
